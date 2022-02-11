@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark pr-5">
+    <a class="navbar-brand" href="#" style="margin-left: 50px;font-weight: bolder;">Tinder</a>
+  
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" >
+        <a class="nav-link"  [routerLink]="['/home']">Home</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/register']" (click)="register()">Register</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/login']">Login</a>
+      </li>
+    </ul>
+  </nav>
+<!--https://img.freepik.com/free-photo/dark-green-marble-wave-background_53876-104420.jpg?w=1380-->
+<div
+  class="bg-image-xl p-5  text-center shadow-1-strong mb-5 text-white"
+  style="background-image: url('https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); margin-bottom: 1000px;">
+  <h1 class="mb-3 h2" style="margin-top: 50px;">Tinder</h1>
+  <p>
+    Enjoy the experience of dating someone special.We make dating fun again
+  </p>
+<div class="container mt-5" style="margin-top: 40px;">
+    <div style="text-align:center; margin-top: 40px;" >
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg mr-2" (click)="register()" >Register</button>
+        <button class="btn btn-success btn-lg mr-2" style="margin-left: 30px;" (click)="login()" >Login</button>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer-fluid footer-expand-md footer-light bg-dark footer-fixed-bottom" style="margin-top: 550px;">
+    <div class="container-expand text-white " style="text-align:center">
+      <span><b>All rights reserved 2022 @Experion</b></span>
+    </div>
+  </footer>
+</div>

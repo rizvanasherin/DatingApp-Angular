@@ -1,0 +1,104 @@
+<!--Template driven form-->
+<!--https://images.pexels.com/photos/4540500/pexels-photo-4540500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1-->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark pr-5">
+    <a class="navbar-brand" href="#" style="margin-left: 50px;font-weight: bolder;">Tinder</a>
+  
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/client-list']">List of Clients</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link"  [routerLink]="['/login']">Reports</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" (click)="logOut()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <div
+  class="bg-image-xl p-5  text-center shadow-1-strong mb-5 text-white"
+  style="background-image: url('https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); margin-bottom: 1000px;">
+<form name="empform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+    <h3>Create your Profile</h3>
+    <hr>
+    <!--Customer ID---Hidden-->
+    <input type="hidden" name="Cid" [(ngModel)]="empService.formData.Cid">
+
+    <!--CustomerName-->
+    <div class="form-group">
+        <label for="" style="float: left;">Full Name :</label>
+        <input type="text" name="CustomerName" #CustomerName="ngModel" [(ngModel)]="empService.formData.CustomerName"
+            class="form-control" placeholder="Enter Full Name" required minlength="1" maxlength="25"
+            [ngClass]="{'is-invalid':CustomerName.touched && CustomerName.invalid}" />
+
+        <!--CustomerName validation-->
+        <div class="validation-error" *ngIf="CustomerName.touched && CustomerName.invalid">
+            <div *ngIf="CustomerName.errors">
+                Full Name is required!
+            </div>
+        </div>
+    </div>
+
+        <!--Age-->
+        <div class="form-group">
+            <label for="" style="float: left;">Age :</label>
+            <input type="text" name="Age" #Age="ngModel" [(ngModel)]="empService.formData.Age"
+                class="form-control" placeholder="Enter Age" required minlength="2" maxlength="3"
+                [ngClass]="{'is-invalid':Age.touched && Age.invalid}" />
+    
+            <!--CustomerName validation-->
+            <div class="validation-error" *ngIf="Age.touched && Age.invalid">
+                <div *ngIf="Age.errors">
+                    Age is required!
+                </div>
+            </div>
+        </div>
+
+
+            <!--Sex-->
+    <div class="form-group">
+        <label for="" style="float: left;">Gender[M/F] :</label>
+        <input type="text" name="Sex" #Sex="ngModel" [(ngModel)]="empService.formData.Sex"
+            class="form-control" placeholder="Enter your gender" required minlength="1" maxlength="25"
+            [ngClass]="{'is-invalid':Sex.touched && Sex.invalid}" />
+
+        <!--Sex validation-->
+        <div class="validation-error" *ngIf="Sex.touched && Sex.invalid">
+            <div *ngIf="Sex.errors">
+                Gender is required!
+            </div>
+        </div>
+    </div>
+
+            <!--Hobbydropdown-->
+            <div class="form-group">
+                <label for="" style="float: left;">Hobby :</label>
+                <select name="Hid" id="Hid" class="form-control" #Hid="ngModel" required
+                    [(ngModel)]="empService.formData2.Hid">
+                    <option value="0" disabled>-- Select the Hobby --</option>
+                    <option *ngFor="let hobby of empService.hobbies" value="{{hobby.Hid}}">{{hobby.Hobby}}
+                    </option>
+                </select>
+        
+                <!--Employee name validation-->
+                <div class="validation-error" *ngIf="Hid.touched && Hid.invalid">
+                    <div *ngIf="Hid.errors.required">
+                        Hobby is required!
+                    </div>
+                </div>
+            </div>
+
+    <!--Submit-->
+    <br>
+    <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-primary form-control"
+            [disabled]="!(form.valid && form.dirty)">Submit</button>
+    </div>
+</form>
+<footer class="footer-fluid footer-expand-md footer-light bg-dark footer-fixed-bottom"
+style="margin-top: 550px;">
+<div class="container-expand text-white " style="text-align:center">
+    <span><b>All rights reserved 2022 @Experion</b></span>
+</div>
+</footer>
+  </div>

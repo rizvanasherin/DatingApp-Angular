@@ -1,0 +1,66 @@
+<div class="bg-image-fluid p-5  text-center shadow-1-strong mb-5 text-white"
+    style="background-image: url('https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); margin-bottom: 1000px;">
+                <!--search functionality-->
+                <input type="text" class="form-control" placeholder="Search by name / age / gender" [(ngModel)]="filter">
+    <h1 style="font-style: oblique;margin-bottom: 30px;margin-top: 30px;">...Find Your Soulmate...</h1>
+<div class="container cta-100" style="align-items: center;margin-left: 680px;">
+    <div class="container">
+        <div class="col blog">
+            <div class="col-md-12">
+                <div id="blogCarousel" class="carousel slide container-blog" data-ride="carousel">
+                    <!-- Carousel items -->
+                    <div class="carousel-inner"
+                    *ngFor="let clt of clientService.clients | filter : filter"
+                    >
+                        <div class="carousel-item active">
+                            <div class="col" style="align-items: center;">
+                                <div class="col-md-4">
+                                    <div class="item-box-blog" style="align-items: center;">
+                                        <div class="item-box-blog-image">
+                                            <!--Date-->
+                                            <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">{{clt.Cid}}</span> </div>
+                                            <!--Image-->
+                                            <figure> <img alt=""
+                                                    src="https://th.bing.com/th/id/OIP.lP_bH8GUeULv2lUYvwSUZgAAAA?pid=ImgDet&rs=1">
+                                            </figure>
+                                        </div>
+                                        <div class="item-box-blog-body"
+                                        >
+                                            <!--Heading-->
+                                            <div class="item-box-blog-heading">
+                                                <a href="#" tabindex="0">
+                                                    <h5 style="color: goldenrod;">{{clt.CustomerName}}</h5>
+                                                </a>
+                                            </div>
+                                            <!--Data-->
+                                            <div class="item-box-blog-data" style="padding: px 15px;">
+                                                <p style="font-size: medium;"><i class="fa fa-user-o"></i> {{clt.Sex}}, <i class="fa fa-comments-o"></i>
+                                                    {{clt.Age}}</p>
+                                            </div>
+                                            <div class="mt"> <a href="#" tabindex="0"
+                                                    class="btn btn-primary white read">Like</a> </div>
+                                                    <div class="mt" style="margin-left: 10px;"> <a href="#" tabindex="0"
+                                                        class="btn btn-danger white read">Message</a> </div>
+                                            <!--Read More Button-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--.row-->
+                            </div>
+                            <!--.item-->
+                        </div>
+                        <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-fluid footer-expand-md footer-light bg-dark footer-fixed-bottom"
+style="margin-top: 550px;">
+<div class="container-expand text-white " style="text-align:center">
+    <span><b>All rights reserved 2022 @Experion</b></span>
+</div>
+</footer>
+</div>

@@ -1,0 +1,36 @@
+<div
+class="bg-image-xl p-5  text-center shadow-1-strong mb-5 text-white"
+style="background-image: url('https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'); margin-bottom: 1000px;">
+<div class="conainer">
+    <div class="header" style="margin-top:10px;">
+        <div class="form-control">List of Clients Having multiple Favourite Foods
+        </div>
+    </div>
+    <table class="table text-white" style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="let emp of clientService.clients">
+                <td>{{emp.CustomerName}}</td>
+                <td>
+                    <!--button-->
+                    <button class="btn btn-sm btn-primary" (click)="updateClient(emp.Cid)">Edit</button>
+                    &nbsp;
+                    <button class="btn btn-sm btn-warning" (click)="DeleteClient(emp.Cid)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+
+    <footer class="footer-fluid footer-expand-md footer-light bg-dark footer-fixed-bottom"
+style="margin-top: 550px;">
+<div class="container-expand text-white " style="text-align:center">
+    <span><b>All rights reserved 2022 @Experion</b></span>
+</div>
+</footer>
+</div>

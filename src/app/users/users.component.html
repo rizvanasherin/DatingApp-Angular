@@ -1,0 +1,22 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark pr-5">
+        <a class="navbar-brand" href="#" style="margin-left: 50px;font-weight: bolder;">Tinder</a>
+      
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" >
+            <a class="nav-link" (click)="insertClient()">Create profile</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" >Messages</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" (click)="logOut()">Logout</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" style="margin-left: 1300px;" (click)="logOut()"><span class="bi bi-search" style="color: aliceblue;"></span>Welcome: {{loggedUser}}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    <app-match-list></app-match-list>
+</header>
